@@ -4,7 +4,6 @@ const userController = {
   // get all users
   getAllUser(req, res) {
     User.find()
-      .sort({ _id: -1 })
       .then(dbUserData => res.json(dbUserData))
       .catch(err => {
         console.log(err);

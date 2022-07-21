@@ -2,7 +2,7 @@ const { Schema, model, Types } = require('mongoose');
 const moment = require('moment');
 
 // ReactionSchema
-const ReactionSchema = newSchema(
+const ReactionSchema = new Schema(
   {
     reactionId: {
       type: Schema.Types.ObjectId,
@@ -31,7 +31,7 @@ const ReactionSchema = newSchema(
 )
 
 // ThoughtSchema
-const ThoughtSchema = newSchema(
+const ThoughtSchema = new Schema(
   {
     thoughtText: {
       type: String,
@@ -60,7 +60,7 @@ const ThoughtSchema = newSchema(
 );
 
 // get count of friends the user has
-ThoughtSchema.virtual(reactionCount).get(function () {
+ThoughtSchema.virtual('reactionCount').get(function () {
   return this.reactions.length;
 })
 
