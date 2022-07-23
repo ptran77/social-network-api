@@ -31,6 +31,7 @@ const thoughtController = {
   // create new Thought
   createThought({ body }, res) {
     Thought.create(body)
+      // get the thought id from the newly created thought and add to the user's thought array
       .then(({ _id }) => {
         return User.findOneAndUpdate(
           { _id: body.userId },
@@ -88,6 +89,7 @@ const thoughtController = {
 
   // add reaction
   addReaction({ params, body }, res) {
+    // add reaction to the Thought's reaction array
     Thought.findOneAndUpdate(
       { _id: params.thoughtId },
       { $push: { reactions: body } },
@@ -108,10 +110,11 @@ const thoughtController = {
   },
 
   // remove reaction
-  removeReaction({ params }, res) {
+  removeReaction({ params, body }, res) {
+    // remove reaction from the Thought's reaction array
     Thought.findOneAndUpdate(
       { _id: params.thoughtId },
-      { $pull: { reactions: { reactionId: params.reactionId } } },
+      { $pull: { reactions: { reactionId: body.reactionId } } },
       { new: true }
     )
       .then(dbThoughtData => {
@@ -128,3 +131,5 @@ const thoughtController = {
       });
   }
 }
+
+module.exports = thoughtController;
