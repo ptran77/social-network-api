@@ -10,6 +10,8 @@ app.use(express.static('public'));
 
 app.use(require('./routes'));
 
+require('dotenv').config();
+
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/social-network-api', {
   useNewUrlParser: true,
   useUnifiedTopology: true
