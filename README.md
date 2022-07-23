@@ -14,7 +14,7 @@ An API for social network applications where users can share their thoughts, rea
 
 ## Installation
 
-- Clone respiratory from https://github.com/ptran77/social-network-api
+- Clone repository from https://github.com/ptran77/social-network-api
 - run 'npm i' to install all neccessary packages
 - open up insomnia or any application for helping test out apis and makes the corresponding routes to test out the api
 
