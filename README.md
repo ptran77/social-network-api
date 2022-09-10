@@ -2,7 +2,7 @@
 
 ## Description
 
-An API for social network applications where users can share their thoughts, react to friends' thoughts, and create a friend list. Uses Express.js for routing, MangoDB database for storing data, MangoDB ODM, and Moment.js for date formatting.
+An API for social network applications where users can share their thoughts, react to friends' thoughts, and create a friend list. Uses Express.js for routing, MangoDB database for storing data, MongoDB ODM, and Moment.js for date formatting.
 
 ## Table Of Content
 
